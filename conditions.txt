@@ -1,0 +1,385 @@
+Hint :- Use f12 to jump to the terminal to type inputs
+        ctrl + tab to switch between the files inside the opened directory in  a text editor
+
+name = input('What is your name? ')
+color = input('What is your favorite color? ')
+print(name + ' likes ' + color)
+
+birth_year = input('Enter your Birth Year: ')
+age = 2021 - int(birth_year)
+print(age)
+
+weight = input('Enter your weight (in pounds): ')
+result = 0.45 * int(weight)
+print(type(result))
+print(result)
+
+course = "Python  for Beginner's"
+print(course[0])
+print(course[-1])
+print(course[-10])
+print(course[0:6]) # it will exclude the last position
+print(course[1:]) # if the end digit is not specified then it will print the whole string from the specified no & Vice Versa
+
+
+first = 'john'
+last = 'smith'
+message = f'{first} [{last}] is a coder' # formating code, add an f in the beginning of the code for fornatting it
+print(message)
+print(len(message)) # print, len etc are functions
+print(message.upper()) # upper, lower etc are methods
+print(message.find('o')) # to find any particular charaacter
+print(message.find('smith')) # we can even find a set of string
+
+course='python for beginners'
+print(course.replace('beginners', 'Noobs!!')) #to replace something
+print('python' in course) # to check whether something is present in the stings or in the set of characters
+
+Arithmetic Operations in Python
+print(10+3)
+print(10*3)
+print(10 ** 3)
+print(10 / 3)
+print(10 // 3) # to get the integer value instead of float
+
+Operator Precedence
+parenthesis ; can be always used to change the order of execution
+exponential 2 ** 3
+multiplication or division
+addition or subtraction
+
+
+x = (2 + 3) * 10 - 3
+print(x)
+
+
+
+Math Functions
+import math
+y=3.8
+print(round(y))
+
+# if statement
+
+price = 1000000
+good_credit = True
+if good_credit:
+        down_payment = 0.1 * 1000000
+    else:
+        down_payment = 0.2 * 1000000
+
+    print(f'Down Payment = ${down_payment}')
+
+
+
+
+# Next Session
+
+has_good_credit = True
+has_criminal_background = False
+
+if has_good_credit and not has_criminal_background: # not operator will make that condition True
+    print('Eligible for Loan')
+else:
+    print('Not Eligible for Loan')
+
+Note:
+temperature = 30 ; implies that the value of the variable temperature is 30
+temperature == 30 ; implies it's a Boolean Function or Condition
+
+
+
+
+# Next Session
+name = 'john smith'
+if len(name)<3:
+    print('must be 3 char long')
+elif len(name)>50:
+    print('max of 50 char allowed')
+else:
+    print('name looks good')
+
+# Weight Converter Program
+
+weight = int(input('Weight: '))
+type = str(input('(L)bs or (K)g: '))
+print(weight)
+print(type)
+if type.lower() == 'l':
+    print(f'You are {weight * 0.4539} kilograms')
+elif type.upper() == 'K':
+    print(f'You are {weight / 0.4539} pounds')
+
+
+   # use ctrl + D for duplicating a line
+
+
+
+#Next Session
+i = 1
+while i<=5:
+   print('*' * i) # Multiplying a string with a number will repeat the string, for the given number of times
+   i = i+1
+print('Done')
+
+
+
+# Guess Game
+# fist the secret number has to be set
+# 3 chances to find the secret no
+# correct :- you won
+# wrong :- srry you failed
+secret_number = 9
+guess_chances = 0
+guess_limit =3
+while guess_chances < guess_limit:
+    guess = int(input('Enter your Guess: ')) #the input will be received in string, so we should convert it into integer
+    guess_chances += 1
+    if guess == secret_number:
+        print('Hurayy, you won!!')
+        break
+else:
+    print('Sorry you Lost, better luck next time')
+
+
+
+Next Session
+# Car Game
+CONDITONS:-
+# waiting fot the user to enter a command
+ help :-
+          start - to start the car
+          stop - to stop the car
+          quit - to exit
+entering other command :
+i dont understand that
+start:-
+  Car started...Ready to go!
+stop:-
+   Car stopped
+quit:-
+ pgm Terminates
+(commands not case sensitive)
+
+
+
+
+#Car Game
+# the repetition of the .lower() method in all the steps can be removed by simply using this .lower() method with the input, so that the input of the user will be immediately converted to lower case
+user_input = ''
+started = False
+while True:
+    user_input = input('> ').lower()
+    if user_input == 'help':
+        print("""
+start - to start the car
+stop - to stop the car
+quit - to exit the game""")
+    elif user_input == 'start':
+        if started:
+            print('The car is alreay started, are you dumb!')
+        else:
+            started = True
+            print('Car started.....Ready to go!!!')
+
+    elif user_input == 'stop':
+        if not started:
+            print('Hey you dumb, the car is already stopped.')
+
+        else:
+            started = False
+            print('Car stopped.')
+    elif user_input == 'quit':
+        break
+    else:
+        print("Sorry sir, I didn't understand you.")
+        print('Use the help command')
+
+
+#Next Session :- for loop
+for loop can be used to iterate over all the items in a list
+
+for item in 'Python':
+    print(item)
+
+for item in ['ben', 'Ten', 'Gwen', 'Zen']:
+    print(item)
+
+for item in [1,2,3,4,5,6,7,8]:
+    print(item)
+
+for item in range(100):
+    print(item)
+
+for item in range(5, 50): to print or display number within a specified range
+    print(item)
+
+for item in range(5, 10, 2): this will display the values between 5 & 10, but with a condition that is the third no 2 which will display the numbers by adding 2 or by jumping 2 steps
+    print(item)
+
+# to print the prices of total items in a shopping cart
+prices = [10, 20, 30]
+total = 0
+for item in prices:
+    total += item
+print(f'Total: {total}')
+
+
+# Next Session
+
+for x in range(5):
+    for y in range(3):
+       print(f'{x}, {y}')
+ # after the execution of the inner loop, then only the control will move to the outer loop. So the 3 values of 7 will be printed with a same value of x, while the inner loop is being execued
+
+
+
+
+# Next Session
+Print the following :-
+xxxxx
+xx
+xxxxx
+xx
+xx
+
+# print('x' * x) we need to solve this problem by using nested loops, not printing directly by using this method
+
+numbers = [5, 2, 5, 2, 2]
+for x in numbers: # outer loop
+    output = ''
+    for count in range(x): # inner loop
+        output+= 'x' # to append x to the output, i.e to print x in our desired format
+    print(output)
+ # Pgm Explanation :- At first the outer loop will start its execution, so while executing the first loop the output or string will be set to null. Then the inner loop will start execution, in that for loop the count variable will read the first value i.e, 5 then we add x to this 5, hence 5 x will be printed. Then control will go back to the outer for loop, then output = '' will reset the string and the loop will contine....
+
+
+Print the following using nested loops :-
+# xx
+# xx
+# xx
+# xx
+# xxxxxxxx
+
+numbers = [2, 2, 2, 2, 8]
+for x_count in numbers:
+    output = ''
+    for count in range(x_count):
+        output += 'x'
+    print(output)
+
+
+
+
+# Lists
+
+name = ['babu', 'shibu', 'ben']
+# print(name)
+# print(name[1])
+# print(name[-1])
+# name[0] = 'babuu'
+name[0] = 'babbu'
+print(name)
+
+
+
+# Next Session
+
+# program to find the largest number in a list
+numbers = [2, 4, 3, 4, 66]
+largest_no = numbers[0]  # setting fist number as the largest
+for item in numbers:
+    if item > largest_no:
+        largest_no = item
+print(largest_no)
+
+
+
+# LISTS
+
+numbers = [2,3,5,7]
+numbers.append(10)
+print(numbers)
+numbers.insert(0, 1)
+print(numbers)
+numbers.pop()
+print(numbers)
+print(5 in numbers)
+numbers.sort() # to sort the list
+
+print(numbers)
+numbers.reverse() # to reverse the string
+print(numbers)
+
+
+# Exercise
+
+# pgm to remove duplicates in a list
+
+numbers = [2, 2, 3, 4, 6, 6, 8]
+uniques = []
+for number in numbers:
+    if number not in uniques:
+        uniques.append(number)
+print(uniques)
+
+
+
+
+# Tuples
+
+# tuples are represented within curly brackets - ()
+# we cant modify or change tuples (they are immutatable), only details abt them can be viewed
+tuples = (1, 2, 4, 6, 7)
+tuples[0] = 10
+print(tuples)
+# Tuples cannot be changed or edited
+
+
+# Unpacking of Lists & Tuples
+
+coordinates = (1, 2, 3)
+x, y, z = coordinates # it means unpacking .i.e, all the values in the tuples are assigned individually to all the variables. This can be done even with lists.
+
+
+
+
+# Dictionary
+
+customer = {
+    "name": "John Smith",  # Key-Value pair .i.e, we can specify values for any keys. "name" is the Key & "John Smith" is the Value
+    "age": 30,
+    'is_verified': True  # Each keys should be unique in a dictionary
+ }
+# Then we can access each items in the dictionary using Square Brackets - []
+print(customer['name'])
+print(customer.get('birthdate'))
+print(customer.get('age'))
+print(customer.get('birthdate', '01/02/2001')) # if we havent defined a value for a particular key, then we can give value for that particular key after a comma
+
+
+
+# Next Session
+
+# Phone: 1234
+# One Two Three Four
+
+input = input('Phone: ')
+words = {
+    '1': 'One',
+    '2': 'Two',
+    '3': 'Three',
+    '4': 'Four',
+    '5': 'Five',
+    '6': 'Six',
+    '7': 'Seven',
+    '8': 'Eight',
+    '9': 'Nine',
+    '0': 'Zero'
+}
+output = ''
+for ch in input:
+    output += words.get(ch, 'Enter a valid number!') + ' '
+ #   word[ch]:- instead of directly accessing the key value using square brackets, we can use the .get method, as if the input entered by the user is not present in the dictionary, then an error won't be displayed
+print(output)
+
