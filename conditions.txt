@@ -1,5 +1,8 @@
 Hint :- Use f12 to jump to the terminal to type inputs
         ctrl + tab to switch between the files inside the opened directory in  a text editor
+        Emoji Shortcut :- Win + .
+        To change between normal cursor & Block cursor :- Insert
+        shift + Enter :- to jump to the new line
 
 name = input('What is your name? ')
 color = input('What is your favorite color? ')
@@ -382,4 +385,64 @@ for ch in input:
     output += words.get(ch, 'Enter a valid number!') + ' '
  #   word[ch]:- instead of directly accessing the key value using square brackets, we can use the .get method, as if the input entered by the user is not present in the dictionary, then an error won't be displayed
 print(output)
+
+
+
+#Next Session
+
+message = input('>')
+output = message.split(' ') # this method can be used to split something with a specified condition. Here the conditon provided is whitespace, so everything after or between a space in a list will be splitted into different words
+print(output)
+
+
+
+# Exercise
+
+message = input('> ')
+words = message.split(' ') # this method can be used to split something with a specified condition. Here the conditon provided is whitespace, so everything after or between a space in a list will be splitted into different words
+emojis = {
+    ':)': '😊',
+    ':(': '😢'
+}
+output = ''
+for ch in words:
+    output += emojis.get(ch, ch) + ' '
+print(output)
+
+
+
+
+# Functions
+
+# whenever we use a full colon in Python, we are defining a Block of code
+# whenever defining a fn, we need to leave 2 emplty lines after the fn definition
+
+def welcome_message():
+     print('Hi!, Welcome to the club pal')
+     print('Whats your name?')
+
+welcome_message()
+
+
+
+
+
+# Next Session
+
+def greet_user(first_name, last_name): # parameters are given inside the brackets of functions
+   print(f'Hi, {first_name} {last_name}')
+   print('Welcome aboard!!')
+
+ greet_user('John', 'Smith') # while calling that fn, its necessary that the values for all the parameters shold be declared along with it (here we are using 2 parameters first_name & last_name)
+# the above statement is an example of a positional argument
+greet_user(last_name='Smith', first_name='John') # this is a keyword argument , i.e we are using the keywords to define the parameters rather than just simpley specifying the values (positional argument)
+# For most part use Positional Arguments rather than Keyword Arguments, while in the case of specifying many numbers and all, we can use Keyword arguments for increased readability
+
+
+
+
+
+
+
+
 
