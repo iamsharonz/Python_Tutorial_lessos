@@ -442,7 +442,67 @@ greet_user(last_name='Smith', first_name='John') # this is a keyword argument , 
 
 
 
+# REturn Statement
+def square(number):
+   return number * number
+
+print(square(3))
+# if the return stmnt is not used, then the output of the code will be NONE
+# By default python returns None
 
 
 
 
+# Creating Reusable Functions
+
+def emoji_converter(message):
+       words = message.split(' ')
+       emojis = {
+                    ':)': '😊',
+                    ':(': '😢'
+                  }
+       result = ''
+       for ch in words:
+          result += emojis.get(ch, ch) + ' '
+       return result
+
+
+# we need 2 blank lines after defining a function
+message = input('> ') # after defining the fn we need take the input from user
+print(emoji_converter(message)) # after that, we need to call the emoji_converter fn & pass the input message to it, then print the result
+
+
+
+
+# EXception Handling :- prevents pgm from crashing or from displaying errors
+
+# program executed with exit code 1, means error or crashing
+try:
+    age = int(input('Age: '))
+    income = 2000
+    risk = income / age
+    print(age)
+except ValueError: # specifying the type of value that can occur, here the ValueError is for handling the input value which the user enters.
+    print('Invalid Value')
+except ZeroDivisionError: # if the user enter an input 0, then the pgm will crash saying 'ZeroDivisionError'. So inorder to prevent that we are using this exception.
+    print('Age cannot be Zero!')
+
+
+
+
+
+# Next Session:- Classes
+
+# In classes we use capital letters & dont use underscores, rather we use capital letters while specifying different words
+
+class Point:
+    def move(self):
+        print('Move')
+
+    def draw(self):
+        print('Draw')
+
+
+# leave 2 blank lines after fn definition
+point1=Point() # created an object names point1 of the class Point()
+point1.move()
