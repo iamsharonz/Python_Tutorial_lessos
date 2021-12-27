@@ -3,6 +3,7 @@ Hint :- Use f12 to jump to the terminal to type inputs
         Emoji Shortcut :- Win + .
         To change between normal cursor & Block cursor :- Insert
         shift + Enter :- to jump to the new line
+        use local variables (variables declared inside a function) more frequently as they are deallocated faster by the python Garbage Collector, whereas the Global variables which are given outside of a fn or given in the start of a pgm as will consume or stay in the memory for a longer time
 
 name = input('What is your name? ')
 color = input('What is your favorite color? ')
@@ -148,7 +149,7 @@ else:
 
 Next Session
 # Car Game
-CONDITONS:-
+CONDITIONS:-
 # waiting fot the user to enter a command
  help :-
           start - to start the car
@@ -506,3 +507,123 @@ class Point:
 # leave 2 blank lines after fn definition
 point1=Point() # created an object names point1 of the class Point()
 point1.move()
+
+
+
+
+# Escape Sequence
+
+# \
+# \\
+# \n
+
+course = 'python \'programming'
+
+print(course)
+
+
+
+
+course = '  python programming '
+print(course.title()) # makes the starting letter of each words Capital
+print(course.strip()) # the strip method will remove the white spaces before & after the word, also there is rstrip for removing spaces on the right side & lstrip viceversa
+print('gram' in course)
+print('Gram' not in course)
+print(3 / 2)
+print(3 // 2) # removes the decimal part
+
+
+
+
+# Boolean
+
+print(bool(""))
+print(bool(0))
+# other than these, any  charchters or numbers are True.
+print(bool('False')) # even this expn is True
+
+
+
+
+# Ternary Operator
+
+age = 5
+if age >= 18:
+    message = 'Eligible'
+else:
+    message = 'Not Eligible'
+print(message)
+ # Another simple way for writing the above code is,
+
+age = 17
+message = 'Eligible' if age >= 18 else 'Not Eligible'
+print(message)
+
+
+
+
+# age between 18 & 65
+
+
+age = 19
+if age < 65 and age > 18:
+# the same above statement can be written more simply as,
+if 18 < age < 65:
+    print('Eligible')
+else:
+    print('Not Eligible')
+
+
+
+
+# Next Session
+
+   if 'bag' > 'apple': # the numbers are compared in a way of sorting, here bag comes after apple, therefore bag is considered larger here (longer in the sense that alphabet b comes after a)
+    print('True')
+else:
+    print('False')
+
+  To print the following
+# Attempt 1 .
+# Attempt 3...
+# Attempt 5 .....
+# Attempt 7 .......
+# Attempt 9 .............
+for numbers in range(1, 10, 2):
+    print('Attempt ', numbers, numbers * ".")
+
+
+
+
+# functions
+
+def increment(number, by=1): # we can aslo make an argument default i.e, we dont have to provide a value to it while calling the function inside paranthesis. i.e, that particular argument will become optional. Always note that these optional arguments can only be specifies after the reuired parameters or arguments only
+    return number + by
+
+
+print(increment(2, 1))
+
+
+
+# Next Session
+
+def multiply(*numbers): # * is used to provide more than 1 value to that particular parameter / argument
+    total = 1
+    for number in numbers:
+        total *= number
+    return total # to return the value after processing this function, otherwise if the total is printed then None will be displayed
+
+print(multiply(2, 3, 4, 5))
+
+
+
+
+# Next Session
+
+# to provide multiple key-value pairs
+def save_user(**user):
+    print(user)
+    print(user['name']) # either just by specifying the user argument we can display all the key-value pairs of user or we can also specify each key within quotes to display their value
+
+
+save_user(id = 1, name = 'Ben', age = 20)
