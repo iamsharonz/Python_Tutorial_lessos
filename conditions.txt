@@ -700,3 +700,117 @@ letters.remove('b')
 print(letters)
 del letters[0:2] # to remove a range of items
 print(letters)
+
+
+
+# Sort a list
+
+numbers = [2, 34, 4, 5 ,32 ,4, 0]
+print(sorted(numbers, reverse=True))
+item = [
+    ('Product1', 10),
+    ('Product2', 1),
+    ('Product3', 0),
+    ('Product4', 30),
+    ('Product5', 2)
+] # some tuples
+
+
+def sort_item(item):
+    return item[1]
+
+
+item.sort(key=sort_item)
+print(item)
+
+
+
+# list comprehension
+
+items = [
+    ('Product1', 10),
+    ('Product2', 5),
+    ('Product3', 4)
+]
+
+prices = [item[1] for item in items]
+filtered = [item for item in items if item[1] >= 10]
+print(prices)
+print(filtered)
+
+
+
+# zip function
+
+list1 = [1, 2, 3, 4, 5]
+list2 = [0, 10, 20, 30, 40]
+
+# print(zip(list1, list2))  the result will be also an iterable, hence we need to convert into a list
+print(list(zip(list1, list2)))
+
+
+
+# Arrays
+
+from array import array
+
+numbers = array("i", [1,2,3,-3]) # i is the typecode and it defined an unsigned int
+print(numbers[3])
+
+
+
+# sets
+
+numbers = [1, 2 , 3, 4, 5, 5]
+set_no = set(numbers)
+print(set_no)
+no = {1, 2, 3}
+no.add(4)
+no.remove(2)
+print(no)
+
+
+numbers = [1, 2, 3 , 4]
+
+set_no = set(numbers)
+second = {5, 6, 7}
+
+print(set_no | second)
+print(set_no - second)
+print(set_no & second)
+# it supports various other operations that a list does not support
+
+
+
+# Dictionaries
+
+no = dict(x=1, y=2) # or no = {"x": 1, "y": 2}
+print(no['x'])
+no['x'] = 10
+print(no)
+for key in no:
+    print(key)
+
+
+
+# Comprehensions
+
+values = {}
+for x in range(5):
+    values[x] = x * 2
+
+# the above lines of code can be simply comprehented as below,
+
+values = [x * 2 for x in range(5)] # this can be done with list, sets & dictionaries (not with tuples)
+print(values)
+
+
+
+# Unpacking Operator :- *, it can unpack any iterable
+
+list = [1, 2, 3, 4, 5]
+print(*list)
+
+values = ["HEllo ", "World"]
+print(*values)
+print(*range(5))
